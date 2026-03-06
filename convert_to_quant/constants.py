@@ -149,6 +149,7 @@ LTXV2_LAYER_KEYNAMES = [
     "transformer_blocks.1.",
     "transformer_blocks.46.",
     "transformer_blocks.47.",
+    "video_embeddings_connector",
     "vae.decoder",
     "vae.encoder",
     "vocoder",
