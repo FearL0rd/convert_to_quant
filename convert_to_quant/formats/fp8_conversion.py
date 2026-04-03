@@ -313,7 +313,8 @@ def convert_to_fp8_scaled(
         text_encoder_filter = (
             filter_flags.get("t5xxl") or
             filter_flags.get("mistral") or
-            filter_flags.get("visual")
+            filter_flags.get("visual") or
+            filter_flags.get("generic_text")
         )
 
         # T5XXL decoder tensors are always removed (not quantized, not kept)
