@@ -62,7 +62,7 @@ def convert_to_fp8_scaled(
     skip_inefficient_layers: bool = False,
     include_input_scale: bool = False,
     no_learned_rounding: bool = False,
-    save_quant_metadata: bool = False,
+    save_quant_metadata: bool = True,
     layer_config: Optional[Dict[str, Any]] = None,
     layer_config_fullmatch: bool = False,
     low_memory: bool = False,
@@ -121,7 +121,7 @@ def convert_to_fp8_scaled(
         )
         comfy_quant = True
     else:
-        comfy_quant = False
+        comfy_quant = True
 
     # Use unified loader (handles both standard and low-memory modes)
     try:
@@ -313,7 +313,8 @@ def convert_to_fp8_scaled(
         text_encoder_filter = (
             filter_flags.get("t5xxl") or
             filter_flags.get("mistral") or
-            filter_flags.get("visual")
+            filter_flags.get("visual") or
+            filter_flags.get("generic_text")
         )
 
         # T5XXL decoder tensors are always removed (not quantized, not kept)

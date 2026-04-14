@@ -183,6 +183,10 @@ MODEL_FILTERS = {
         "category": "text",
         "exclude": VISUAL_AVOID_KEY_NAMES,
     },
+    "generic_text": {
+        "help": "Generic text encoder: skip MLP layers (down/up/gate proj)",
+        "category": "text",
+    },
     # Diffusion Models (Flux-style)
     "flux2": {
         "help": "Flux.2: keep modulation/guidance/time/final layers high-precision",
